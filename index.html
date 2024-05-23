@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html><head>
+    <title>Brawl Stars Game</title>
+<meta name="description" content="Brawl Stars Game"/>
+<meta property="og:title" content="Brawl Stars Game"/>
+<meta property="og:description" content="Brawl Stars Game"/>
+<meta name="referrer" content="no-referrer">
+    <style>
+        .header_blue {
+            background: #1565c0;
+            padding: 80px 0 20px;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .header_text {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+        body{
+            margin:0;
+            font-family:Roboto, sans-serif;
+            color:#444;
+        }
+        .unlockBtn:hover{
+            box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        }
+        .unlockBtn {
+            background: #2196f3;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+            min-height: 31px;
+            min-width: 70px;
+            padding: 2px 16px;
+            text-align: center;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-transition: all 280ms ease;
+            transition: all 280ms ease;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            font: 500 14px/31px Roboto,sans-serif!important;
+            outline: 0!important;
+            color:white;
+        }
+        .content-container{
+            width:80%;margin:0 auto;
+        }
+        @font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(//fonts.gstatic.com/s/roboto/v15/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(//fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(//fonts.gstatic.com/s/roboto/v15/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(//fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}
+        body{
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-attachment: fixed;
+  font-family: Roboto;
+}
+.cardConainer{
+  max-width: 550px;
+  width: 90%;
+    margin-top: 30px;
+
+}
+.allCard{
+  position: relative;
+  display: none;
+}
+.bntLeft{
+  padding-top: 7px;
+      font-size: 26px;
+      font-weight: bold;
+      padding-bottom: 7px;
+      width: 50px;
+      background-color: #2885a9;
+      margin-top: 11px;
+      float: left;
+      border-style: solid;
+      border-width: 0 0 4px 0;
+      border-radius: 5px;
+      border-color: #65c0e3;
+      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 0 5px #000000ad;
+      position: relative;
+}
+.bntRight{
+  position: relative;
+  padding-top: 7px;
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 7px;
+  width: 50px;
+  background-color: #2885a9;
+  margin-top: 11px;
+  float: right;
+  border-style: solid;
+  border-width: 0 0 4px 0;
+  border-radius: 5px;
+  border-color: #65c0e3;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 0 5px #000000ad;
+}
+.cardAmount{
+  font-size: 32px;
+  font-weight: bold;
+  color: #2885a9;
+  display: inline-block;
+}
+.card{
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #0d5c2a;
+  background-image: url(https://d266key948fg17.cloudfront.net/uploads/1638335â€¦.png);
+  background-size: 45px;
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border-width: 2px;
+  border-color: #c8c8c8;
+  border-style: solid;
+}
+.headeranicontainer{
+  width:100%;
+  height: 100%;
+  position: relative;
+}
+.headerAnimation{
+  width: 15px;
+    height: 160%;
+    background-color: #ffffff6e;
+    position: absolute;
+    top: -20px;
+    transform: rotate(
+30deg);
+    animation: headerAnimation 2s linear infinite;
+  }
+  @keyframes headerAnimation {
+    0% {left:0px;}
+    100% {left:400px;}
+  }
+.logo{
+  width:500px;
+  animation: logo 1s linear infinite;
+  position: absolute;
+  left:50%;
+  margin-left: -250px;
+top:10px;
+z-index: 5;
+  }
+  @keyframes logo {
+    0% {
+    transform: scale(0.97);}
+    50% {
+      transform: scale(1);}
+      100% {
+        transform: scale(0.97);}
+  }
+.bg1{
+  background-image: url("https://d266key948fg17.cloudfront.net/uploads/1668825564c2e70128b7302f08768691f7efc264f6.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #637589;
+  z-index: -2;
+}
+
+.platform-header{
+  background-color: #ffffff;
+      width: 170px;
+      border-radius: 7px;
+      color: #6f6f6f;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      margin-left: -85px;
+      top: -14px;
+      border-style: solid;
+      border-width: 2px;
+      /* box-shadow: inset 0 0 5px #000000ba; */
+      /: ;
+      border-color: #eaebed;
+}
+.robuxAmount{
+  background-color: #ffffff;
+  width: 140px;
+  border-radius: 7px;
+  color: #6f6f6f;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -70px;
+  top: -14px;
+  border-style: solid;
+  border-width: 2px;
+  /* box-shadow: inset 0 0 5px #000000ba; */
+  /: ;
+  border-color: #eaebed;
+}
+.game-username{
+  background-color: #ffffff;
+  width: 140px;
+  border-radius: 7px;
+  color: #6f6f6f;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -70px;
+  top: -12px;
+  border-style: solid;
+  border-width: 2px;
+  /* box-shadow: inset 0 0 5px #000000ba; */
+  /: ;
+  border-color: #12243617;
+}
+
+.step1{
+  max-width: 600px;
+  margin-top: 150px;
+  width: 90%;
+  color: black;
+  height: auto;
+  box-shadow: 0 0 20px 4px #00000054;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  position: relative;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 5px 0 5px 0;
+  border-color: #ff1b1f;
+  /* background-image: url(https://d266key948fg17.cloudfront.net/uploads/1636947â€¦.png); */
+  background-size: 6px;
+  background-color: #ffffff;
+}
+.step2{
+  margin-top: 200px;
+  max-width: 600px;
+  height: 487px;
+  width: 90%;
+  color: white;
+  height: auto;
+  display: none;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 5px 0 5px 0;
+  border-color: #ff1b1f;
+  /* background-image: url(https://d266key948fg17.cloudfront.net/uploads/1636947â€¦.png); */
+  background-size: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 4px #00000054;
+}
+.last-step{
+  width: 100%;
+  height: 100%;
+position: absolute;
+top:0px;
+left:0px;
+display: none;
+}
+.loading-box{
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+.main-header{
+  width: 250px;
+  padding: 15px 5px 15px 5px;
+  font-size: 22px;
+  background-color: #000000c7;
+  color: #dfdfdf;
+  font-weight: bold;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  border-color: #ff1b1f;
+  border-image-slice: 1;
+  margin-left: -130px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  border-image: graydiu;
+  overflow: hidden;
+  background-size: 6px;
+    }
+.namecontainer{
+  position: relative;
+}
+.arrow{
+  width: 110px;
+  height: 80px;
+  background-image: url("https://d266key948fg17.cloudfront.net/uploads/16383357267b972c278a2de4736b2142ce016479c1.png");
+  background-size: 60px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:15px;
+  left:-60px;
+  animation: arrow 1s linear infinite;
+  z-index: 2;
+  }
+  @keyframes arrow {
+    0% {left:-60px;}
+    50% {left:-65px;}
+  }
+  .arrow2{
+    width: 110px;
+    height: 80px;
+    background-image: url("https://d266key948fg17.cloudfront.net/uploads/16383357267b972c278a2de4736b2142ce016479c1.png");
+    background-size: 60px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:15px;
+    left:-50px;
+    animation: arrow2 1s linear infinite;
+      z-index: 2;
+    }
+    @keyframes arrow2 {
+      0% {left:-50px;}
+      50% {left:-55px;}
+    }
+.text-1{
+  padding: 10px;
+  font-weight: bold;
+  font-family: Quicksand;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* text-shadow: 0px 0px 5px black; */
+  color: black;
+}
+.text-2{
+  font-family: Quicksand;
+  font-size: 12px;
+  color: #a7a7a7;
+}
+.text-gen{
+  color:#ff5454;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+.text-gen{
+  color:#ff5454;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen-status{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen1{
+  color:#ababab;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+display: none;
+}
+.text-gen1-status{
+  height: 10px;
+  width: 10px;
+  background-color: #03dc8c;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen2{
+  color:#ababab;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen2-status{
+  height: 10px;
+  width: 10px;
+  background-color: #d0ff84;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen3{
+  color:#ababab;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen3-status{
+  height: 10px;
+  width: 10px;
+  background-color: #03dc8c;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen4{
+  color:#ababab;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen4-status{
+  height: 10px;
+  width: 10px;
+  background-color: #d0ff84;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.text-gen5{
+  color:#ababab;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen5-status{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen6-status{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.text-gen6{
+  color:#d0ff84;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  display: none;
+}
+.text-gen6-status{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.loading-recent{
+  background-image: url("https://d266key948fg17.cloudfront.net/uploads/16681375499ff73c43e7645db066d6d1ac71532ae9.png");
+  width: 12px;
+  height: 12px;
+background-size: contain;
+display: inline-block;
+margin-right:  2px;
+animation: Aniloading 1s linear infinite;
+}
+@keyframes Aniloading {
+  100% {transform: rotate(360deg);}
+}
+
+.text-gen-loading{
+  color:#ababab;
+}
+.allPlatform{
+
+  margin-top:10px;
+}
+.input-username{
+  font-size: 26px;
+  font-weight: bold;
+  outline: none;
+    color:#323232;
+    width: 100%;
+
+      border: none;
+margin-left:40px;
+}
+.namecontainer{
+  overflow: hidden;
+  font-family: Goldman;
+  padding-left: 50px
+px
+;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0px;
+  /* background-color: #163b83; */
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #c8c8c8;
+  border-style: solid;
+  background-image: url(https://d266key948fg17.cloudfront.net/uploads/163833575236b5105b5160433f3fab425000ac74f9.png);
+  background-repeat: no-repeat;
+  background-size: 28px;
+  background-position: 10px 14px;
+
+}
+.platformcontatiner{
+  max-width: 590px;
+  width: 95%;
+  position: relative;
+}
+.inputplatform1{
+  background-color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 20px 0px 20px 50px;
+  color: #323232;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  background-image: url(https://d266key948fg17.cloudfront.net/uploads/16383357519da7c82fce4482c7278899c8f702eb24.png);
+  background-size: 45px;
+  background-repeat: no-repeat;
+  background-position-y: 6px;
+  background-position-x: 6px;
+  width: 100%;
+  border-width: 2px;
+  border-color: #c8c8c8;
+  border-style: solid;
+  }
+::placeholder {
+  color: #b3b3b338;
+}
+.platform{
+  background-color: #1f1f1f;
+      width: 90px;
+      height: 90px;
+      background-size: cover;
+      border-radius: 24px;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #b3b3b3;
+      display: inline-block;
+      margin: 15px;
+}
+.Robux-Card{
+  background-color: #ababab;
+  width: 160px;
+  height: 130px;
+  background-size: cover;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d4d4d4;
+  display: inline-block;
+  margin: 15px;
+}
+.Robux-Card-Selected{
+  width: 160px;
+  height: 130px;
+  background-size: cover;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  display: inline-block;
+  background-color: #03dc8c;
+  animation: pulse 0.1s linear ;
+  animation-fill-mode: forwards;
+  margin: 15px;
+  color:black;
+}
+.Robux-Card:hover{
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  background-color: #03dc8c;
+  animation: pulse 0.1s linear ;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  color:black;
+}
+@keyframes pulse{
+ 0%  {transform: scale(1);}
+ 100%  {transform: scale(1.1);}
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/* Recent Activiy */
+.recentActivity{
+box-shadow: 0 0 5px;
+  max-width: 600px;
+      width: 90%;
+  height: auto;
+background-image: linear-gradient(to right, #18689b, #1f6499, #266097, #2c5b95, #325792, #315698, #31559d, #3354a2, #2c56b1, #2357bf, #1758ce, #0359dc);
+  position: relative;
+  margin-top: 10px;
+border-radius: 20px;
+margin-bottom: 40px;
+box-shadow: 0 0 20px 4px #00000054;
+}
+.recent-card{
+  margin-top: 100px;
+  border-radius: 20px 20px 0 0;
+  /* background-color: #034ddc; */
+  color: white;
+  width: 100%;
+  height: 90px;
+  /* background-image: url(https://d266key948fg17.cloudfront.net/uploads/1636947â€¦.png); */
+  background-size: 6px;
+  /* background-color: #034ddc;*/
+}
+.activity-pro{
+  margin-top: 5px;
+  width: 90%;
+
+  height: 20px;
+  position: relative;
+  z-index: 1
+}
+.bnt-robux-generate{
+  width: 140px;
+      padding: 20px;
+      background-color: #2885a9;
+      margin: 10px;
+      cursor: pointer;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 8px;
+      border-style: solid;
+      font-size: 22px;
+      border-width: 0 0 4px 0;
+      border-color: #65c0e3;
+      margin-top: 25px;
+}
+.bnt-robux-generate:hover{
+  background-color: #65c0e3;
+  animation: pulse1 0.1s linear ;
+  border-color: #2885a9;
+  color: #393939;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 5px #2885a9;
+}
+@keyframes pulse1{
+ 0%  {transform: scale(1);}
+ 100%  {transform: scale(1.05);}
+}
+.pro-step1{
+  width: 10px;
+  height: 10px;
+  background-color: #b8b8b8;
+  border-radius: 50%;
+  position: absolute;
+  left:5px;
+  top:15px;
+  z-index: 1;
+}
+.pro-step2{
+  width: 10px;
+  height: 10px;
+  background-color: #b8b8b8;
+  border-radius: 50%;
+  position: absolute;
+  left:50%;
+  top:15px;
+  z-index: 1;
+
+}
+
+.pro-step3{
+  width: 10px;
+  height: 10px;
+  background-color: #b8b8b8;
+  border-radius: 50%;
+  position: absolute;
+  right:5px;
+  top:15px;
+  z-index: 1;
+}
+.pro-bgbar{
+  height: 2px;
+  width: 525px;
+  background-color: #b8b8b8;
+  position: absolute;
+  left: 10px;
+  top:19px;
+  overflow: hidden;
+}
+.progress-bar{
+  height: 2px;
+  width: 100%;
+  background-color: #03fff8;
+  position: absolute;
+}
+.loading{
+  background-image: url("https://d266key948fg17.cloudfront.net/uploads/16681375499ff73c43e7645db066d6d1ac71532ae9.png");
+  width: 12px;
+  height: 12px;
+background-size: contain;
+display: inline-block;
+margin-right:  2px;
+animation: Aniloading 1s linear infinite;
+}
+@keyframes Aniloading {
+  100% {transform: rotate(360deg);}
+}
+.chatroom{
+  background-color: #eaeaea;
+  width:100%;
+  height: 250px;
+  overflow: hidden;
+  font-family: Quicksand;
+
+  font-size: 18px;
+}
+.chartroom-header{
+  background-image: linear-gradient(to right, #6f05b3, #8005bc, #9105c4, #a305cd, #b404d5, #b504d4, #b704d2, #b804d1, #a904c6, #9b03ba, #8d02af, #7f01a3);
+  width:100%;
+  height: 20px;
+  padding: 5px;
+  text-align: left;
+  color:white;
+}
+.chartroom-body{
+  padding: 15px;
+  text-align: left;
+  font-size: 12px;
+  background-color: white;
+      width: 100%;
+      height: 200px;
+  overflow-y: scroll;
+
+}
+.chatroom-name{
+  color:#01b7e4;
+  font-size: 14px;
+}
+.chatroom-time{
+  font-size: 14px;
+  color:#01b7e4;
+}
+.chatroom-message{
+  font-size: 14px;
+  color:black;
+}
+.online-status{
+  background-color: #00ff0a;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+margin-bottom: 2px;
+}
+/* end Activiy */
+
+
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #515151;
+  border-color: #515151 transparent #515151 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.text-generation{
+  position:absolute; left:70px;top:0px;
+}
+.text-verification{
+  position:absolute; right:70px;top:0px;
+}
+
+
+.showin {
+  animation: showin 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showin {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width:705px) {
+  .arrow{
+    width: 110px;
+    height: 80px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:25px;
+    left:-30px;
+    animation: arrow 1s linear infinite;
+    z-index: 2;
+    }
+    @keyframes arrow {
+      0% {left:-30px;}
+      50% {left:-35px;}
+    }
+    .arrow2{
+      width: 110px;
+      height: 80px;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top:25px;
+      left:-30px;
+      animation: arrow2 1s linear infinite;
+      }
+      @keyframes arrow2 {
+        0% {left:-30px;}
+        50% {left:-35px;}
+      }
+  .Robux-Card{
+    background-color: #ababab;
+    width: 28%;
+    height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #d4d4d4;
+    display: inline-block;
+    margin: 8px;
+  }
+  .Robux-Card-Selected{
+    width: 28%;
+    height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    display: inline-block;
+    animation: pulse 0.1s linear ;
+    animation-fill-mode: forwards;
+    margin: 8px;
+
+    color:black;
+  }
+
+  .pro-bgbar{
+    height: 2px;
+    width: 95%;
+    background-color: #b8b8b8;
+    position: absolute;
+    left: 10px;
+    top:19px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .text-generation{
+     left:40px;
+  }
+  .text-verification{
+     right:40px;
+  }
+.logo{
+  width: 100%;
+margin-left: 0;
+  left:0;
+}
+  .Robux-Card{
+    background-color: #ababab;
+    width: 25%;
+    height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #d4d4d4;
+    display: inline-block;
+    margin: 8px;
+  }
+  .Robux-Card-Selected{
+    width: 25%;
+    height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    display: inline-block;
+    background-color: #03dc8c;
+    animation: pulse 0.1s linear ;
+    animation-fill-mode: forwards;
+    margin: 8px;
+    color:black;
+  }
+  .pro-bgbar{
+    height: 2px;
+    width: 93%;
+    background-color: #b8b8b8;
+    position: absolute;
+    left: 10px;
+    top:19px;
+    overflow: hidden;
+  }
+  .text-1{
+    font-size:10px;
+  }
+  .text-2{
+    font-size:11px;
+  }
+  .bnt-robux-generate{
+    width:160px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .recent-card {
+    margin-top: 30px;
+
+}
+}
+
+@media only screen and (max-width:440px) {
+
+.main-header{
+  width:180px;
+  margin-left: -100px;
+  font-size: 16px;
+  padding:10px 5px 10px 5px;
+}
+.step1{
+  margin-top: 120px;
+  width: 95%;
+  padding-top:18px;
+  padding-bottom: 10px;
+}
+.card{
+  background-position: 15px 20px;
+  background-size:30px;
+}
+}
+@media only screen and (max-width:300px) {
+  .step1{
+    margin-top: 100px;
+  }
+  .main-header {
+      width: 160px;
+      margin-left: -83px;
+      font-size: 14px;
+      padding: 5px 3px 5px 3px;
+  }
+}
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel = "stylesheet"  type = "text/css"  href = "style.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+  <title>GEMS GENERATOR</title>
+</head>
+<body>
+<div class="bg1"></div>
+<div class="stylemain" stlye="text-align:left;margin-left:10px;" id=""><center>
+<img src="https://d266key948fg17.cloudfront.net/uploads/166882565257bb0de091cdbb1069b5ad92009f031a.png" class="logo"></img>
+<div class="step1 showin" id="step1">
+  <div class="main-header noselect" id="mainheader"><div clsas="headeranicontainer"><div class="headerAnimation"></div></div>Gems Generator</div>
+  <div class="text-1">CLAIM YOUR GEMS PACKAGE BY FILLING OUT THE FORM BELOW</div>
+  <div class="platformcontatiner">
+      <div class="arrow" id="arrow"></div>
+    <div class="game-username">Your Username</div>
+    <div class="namecontainer"id="namecontainer">
+  <input type="text" id="lname" placeholder="username"class="input-username" autocomplete="off"  oninput="showplatform()">
+</div>
+</div>
+
+  <br>
+  <div class="allPlatform showin" id="allplatform">
+
+  <div class="platform-header">Choose your platform</div>
+  <div class="platformcontatiner">
+  <select class="inputplatform1" id="platform" onchange="myFunction()">
+  <option value="Platform">Platform ...</option>
+  <option value="ANDROID">ANDROID</option>
+  <option value="IOS">IOS</option>
+  <option value="WINDOWS">WINDOWS</option>
+  <option value="MAC">MAC</option>
+  <option value="NINTENDO">NINTENDO</option>
+  <option value="PSN">PSN</option>
+  <option value="XBOX">XBOX</option>
+  </select>
+</div>
+</div>
+<div class="allCard showin" id="allcard">
+        <div class="robuxAmount">Gems Amount</div>
+  <div class="cardConainer" id="cardConainer">
+
+    <div class="bntLeft" onclick="card(-1)">-</div>
+      <div class="bntRight" onclick="card(1)">+</div>
+<div class="card">
+<div class="cardsicon Logoshowin" id="cardsicon"></div>
+<div class="cardAmount" id="cardAmount">1000</div>
+
+<div class="cardlinebottom">
+<div class="line-Ani3" id="line-Ani3"></div>
+</div>
+</div>
+<div class="Allindex">
+<div class="index1" id="index1"></div>
+<div class="index1" id="index2"></div>
+<div class="index1" id="index3"></div>
+<div class="index1" id="index4"></div>
+</div>
+</div>
+<div class="bnt-robux-generate" onclick="generate()">Generate</div>
+</div>
+</div>
+<div class="step2 showin" id="step2">
+
+
+  <div class="text-gen"  id="text-gen"><div class="text-gen-status"></div>Failed to locate Brawl Stars Game User <span id="user-name" style="font-weight: bolder;text-decoration: underline;font-size: 18px;"></span> (attempt 1)</div>
+  <div class="text-gen1" id="text-gen1"><div class="text-gen1-status"></div>Successfully located Brawl Stars Game User <span id="user-name1" style="font-weight: bolder;text-decoration: underline;font-size: 18px;"></span> (attempt 2)</div>
+  <div class="text-gen2" id="text-gen2"><div class="text-gen2-status"></div>Sending Gems...</div>
+  <div class="text-gen3" id="text-gen3"><div class="text-gen3-status"></div>Gems sent Successfully.</div>
+  <div class="text-gen6" id="text-gen6"><div class="text-gen6-status"></div></div>
+  <div class="text-gen4" id="text-gen4"><div class="text-gen4-status"></div>Verification is required.</div>
+  <div class="text-gen5" id="text-gen5"><div class="text-gen5-status"></div>Please complete anti-bot verification. Your Gems will be added to <span id="user-name2" style="font-weight: bolder;text-decoration: underline;font-size: 18px;"></span> automatically once you are verified.</div>
+
+
+  <div class="loading-box" id="loading-box">
+  <div class="lds-dual-ring"></div>
+  <div class="text-gen-loading" id="text-gen-loading">Initializing scripts...</div>
+</div>
+<div class="bnt-robux-generate showin" style="display:none" id="bntverify">
+  <a href="https://booksheaven9.blogspot.com/?m=1">
+    Verify Now 
+  </a>
+  </div>
+</div>
+
+
+        <div class="recentActivity showin" id="recentActivity">
+          <div class="recent-card">
+            <div style=""><img src="https://d266key948fg17.cloudfront.net/uploads/166882568134fc8137f0d09e95579432109af5925a.png" style="width:20px;margin-bottom:-5px;margin-top:10px;margin-right:5px;"></img><span class="fontpro" id="genname" style="color:#03dc8c;text-shadow:0 0 5px black">vucavuca</span></div>
+        <div style="">
+          <img src="https://d266key948fg17.cloudfront.net/uploads/166882559741d52bb2cbfa8f0eda57905e7afbebe4.png" style="width:20px;margin-bottom:-7px;margin-top:5px;filter:invert(0)"></img><span class="fontpro" id="genrobux" style="color:white;font-size:12px"> 10,000 Gems</span>
+        </div>
+        <div class="activity-pro">
+            <div style="">
+              <span class="text-generation"><div class="loading-recent" id="gen-loading"></div><span class="fontpro" style="color:white;font-size:10px">generation</span></span>
+              <span class="text-verification"><div class="loading-recent" id="veri-loading"></div><span class="fontpro" style="color:white;font-size:10px">Verification</span></span>
+            </div>
+            <div class="pro-step1" id="pro-step1"></div>
+            <div class="pro-step2" id="pro-step2"></div>
+            <div class="pro-step3" id="pro-step3"></div>
+            <div class="pro-bgbar"><div class="progress-bar" id="progress-bar"></div></div>
+
+          </div>
+
+        </div>
+        <div class="chatroom">
+          <div class="chartroom-header">
+          <div class="online-status"></div>
+          Generator Chatroom
+          </div>
+          <div class="chartroom-body" id="chartroom-body">
+            <span style="color:#33ff00">Welcome to the chatroom, posting links or spamming will result in a kick.
+</span><br>
+<div id="chatroom-message"> </div>
+
+          </div>
+        </div>
+
+          </div>
+  </center></div>
+</body>
+ <script src="main.js"></script>
+</html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var AIVDX_CXE_GtvXGc={"it":4300899,"key":"ea2bb"};
+</script>
+<script src="https://d2ntqa2f0qw7q7.cloudfront.net/9bcaff1.js"></scri
+<script type="text/javascript">
+    $('.showContentLocker').click(function(){
+       _my();
+        return false;
+    });
+</script>
+<script>
+
+</script>
+<script type="text/javascript">
+    var name = document.getElementById("lname").value;
+function showplatform(){
+  name = document.getElementById("lname").value;
+  console.log(name);
+  if (name==""){
+    document.getElementById("arrow").style.display="block";
+
+  }else{
+    if (name.length<2){
+
+  }
+    document.getElementById("arrow").style.display="none";
+
+  }
+
+}
+var card1=1000;
+var card2=2500;
+var card3=5000;
+var card4=10000;
+var cardvalue=card1;
+var currentCardNum=1;
+document.getElementById("cardAmount").innerHTML=cardvalue;
+function card(num){
+document.getElementById("index1").style.backgroundColor="white";
+document.getElementById("index2").style.backgroundColor="white";
+document.getElementById("index3").style.backgroundColor="white";
+document.getElementById("index4").style.backgroundColor="white";
+document.getElementById("cardsicon").classList.remove("Logoshowin");
+document.getElementById("cardsicon").classList.remove("Logoshowin2");
+document.getElementById("cardsicon").classList.remove("Logoshowin3");
+document.getElementById("cardsicon").classList.remove("Logoshowin4");
+  if (currentCardNum==4 && num==1){
+      document.getElementById("index4").style.backgroundColor="#0d5c2a";
+    document.getElementById("cardsicon").classList.add("Logoshowin4");
+    return;
+  }
+  if (currentCardNum==1 && num==-1){
+      document.getElementById("index1").style.backgroundColor="#0d5c2a";
+    document.getElementById("cardsicon").classList.add("Logoshowin");
+    return;
+  }
+
+  currentCardNum=currentCardNum+num;
+  if (currentCardNum<1){
+    currentCardNum=1
+  }
+  if (currentCardNum>4){
+    currentCardNum=4
+  }
+        var coin=0;
+if (currentCardNum==1)
+{
+    document.getElementById("index1").style.backgroundColor="#0d5c2a";
+  cardvalue=card1;
+
+    document.getElementById("line-Ani3").classList.add("line-Ani3");
+    setTimeout(function(){
+  document.getElementById("line-Ani3").classList.remove("line-Ani3");
+    },500);
+
+
+  document.getElementById("cardsicon").classList.add("Logoshowin");
+  var myVar2 = setInterval(UserTimer, 1);
+          function UserTimer() {
+            coin=coin+(card1/100);
+            if (coin<=card1){
+              document.getElementById("cardAmount").innerHTML=Math.floor(coin);
+            }else{
+              document.getElementById("cardAmount").innerHTML=card1;
+              clearInterval(myVar2);
+            }
+          }
+}
+
+if (currentCardNum==2)
+{
+      document.getElementById("line-Ani3").classList.add("line-Ani3");
+      setTimeout(function(){
+    document.getElementById("line-Ani3").classList.remove("line-Ani3");
+      },500);
+    document.getElementById("index2").style.backgroundColor="#0d5c2a";
+    cardvalue=card2;
+  document.getElementById("cardsicon").classList.add("Logoshowin2");
+  var myVar2 = setInterval(UserTimer, 1);
+          function UserTimer() {
+            coin=coin+(card2/100);
+            if (coin<=card2){
+              document.getElementById("cardAmount").innerHTML=Math.floor(coin);
+            }else{
+              document.getElementById("cardAmount").innerHTML=card2;
+              clearInterval(myVar2);
+            }
+          }
+}
+
+if (currentCardNum==3)
+{    document.getElementById("line-Ani3").classList.add("line-Ani3");
+setTimeout(function(){
+document.getElementById("line-Ani3").classList.remove("line-Ani3");
+},500);
+    document.getElementById("index3").style.backgroundColor="#0d5c2a";
+    cardvalue=card3;
+  document.getElementById("cardsicon").classList.add("Logoshowin3");
+  var myVar2 = setInterval(UserTimer, 1);
+          function UserTimer() {
+            coin=coin+(card3/100);
+            if (coin<=card3){
+              document.getElementById("cardAmount").innerHTML=Math.floor(coin);
+            }else{
+              document.getElementById("cardAmount").innerHTML=card3;
+              clearInterval(myVar2);
+            }
+          }
+}
+
+if (currentCardNum==4)
+{    document.getElementById("line-Ani3").classList.add("line-Ani3");
+setTimeout(function(){
+document.getElementById("line-Ani3").classList.remove("line-Ani3");
+},500);
+    document.getElementById("index4").style.backgroundColor="#0d5c2a";
+    cardvalue=card4;
+  document.getElementById("cardsicon").classList.add("Logoshowin4");
+  var myVar2 = setInterval(UserTimer, 1);
+          function UserTimer() {
+            coin=coin+(card4/100);
+            if (coin<=card4){
+              document.getElementById("cardAmount").innerHTML=Math.floor(coin);
+            }else{
+              document.getElementById("cardAmount").innerHTML=card4;
+              clearInterval(myVar2);
+            }
+          }
+}
+
+}
+function SelectedCard(cardnum){
+document.getElementById("Robux-Card1").classList.remove('Robux-Card-Selected');
+document.getElementById("Robux-Card2").classList.remove('Robux-Card-Selected');
+document.getElementById("Robux-Card3").classList.remove('Robux-Card-Selected');
+document.getElementById("Robux-Card1").classList.add('Robux-Card');
+document.getElementById("Robux-Card2").classList.add('Robux-Card');
+document.getElementById("Robux-Card3").classList.add('Robux-Card');
+
+  document.getElementById("Robux-Card"+cardnum).classList.remove('Robux-Card');
+  document.getElementById("Robux-Card"+cardnum).classList.add('Robux-Card-Selected');
+}
+function myFunction() {
+
+  var x = document.getElementById("platform").value;
+  if (x=="Platform"){
+      document.getElementById("allcard").style.display="none";
+  document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/16383357519da7c82fce4482c7278899c8f702eb24.png')";
+  }
+if (x=="ANDROID"){
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/16383358376c845b8d04e469a78a38941fa0ecc209.png')";
+}
+if (x=="IOS"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/163833574809188cec8bde0acabe681c6fb1f0ddfd.png')";
+}
+if (x=="WINDOWS"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/1638335751073b8f7ca6d1a1b89a8082c0cf2f8186.png')";
+}
+if (x=="MAC"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/1638335750a20134aee4fff1b9daf3a9af174b55f6.png')";
+}
+if (x=="NINTENDO"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/163833575029fe4fd44cf36ff1360549e03a61d8b4.png')";
+}
+if (x=="PSN"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/1638335752421b2e80561c16312606541860567bb0.png')";
+}
+if (x=="XBOX"){
+
+
+  document.getElementById("allcard").style.display="block";
+document.getElementById("platform").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/16383357537cafa80d5f3e87ed95786f78ebc5ed5f.png')";
+}
+}
+function generate(){
+
+  var lname=document.getElementById("lname").value;
+  document.getElementById("recentActivity").style.display="none";
+
+  if (lname==''){
+    document.getElementById("namecontainer").style.borderColor= "#ff9d9d";
+    document.getElementById("lname").focus();
+  }else{
+    document.getElementById("step1").style.display="none";
+
+    document.getElementById("step2").style.display="block";
+    var username= document.getElementById("lname").value;
+    document.getElementById("user-name").innerHTML=username;
+    document.getElementById("user-name1").innerHTML=username;
+    document.getElementById("user-name2").innerHTML=username;
+    var myVar2 = setInterval(UserTimer, 2000);
+    var linestep=1;
+    function UserTimer() {
+      if (linestep==1){
+        document.getElementById("text-gen-loading").innerHTML="Checking public key...";
+      }else if(linestep==2){
+        document.getElementById("text-gen-loading").innerHTML="Verifying hash...";
+      }else if(linestep==3){
+        document.getElementById("text-gen-loading").innerHTML="Extracting...";
+      }else if(linestep==4){
+        document.getElementById("text-gen-loading").innerHTML="Locating Brawl Stars Game User " +username+" (attempt 1)...";
+      }else if(linestep==5){
+        document.getElementById("text-gen").style.display="block";
+        document.getElementById("text-gen-loading").innerHTML="Locating Brawl Stars Game User " +username+" (attempt 2)...";
+      }
+      else if(linestep==6){
+        document.getElementById("text-gen1").style.display="block";
+        document.getElementById("text-gen-loading").innerHTML="Downloading values...";
+      }else if(linestep==7){
+        document.getElementById("text-gen-loading").innerHTML="Format JSON...";
+      }else if(linestep==8){
+
+        document.getElementById("text-gen-loading").innerHTML="Sending Packets...";
+      }else if(linestep==9){
+
+        document.getElementById("text-gen-loading").innerHTML="Reading config...";
+      }else if(linestep==10){
+        document.getElementById("text-gen-loading").innerHTML="Pinging node.js";
+      }else if(linestep==11){
+  document.getElementById("text-gen2").style.display="block";
+
+        document.getElementById("text-gen-loading").innerHTML="Sending...";
+      }else if(linestep==14){
+  document.getElementById("text-gen3").style.display="block";
+  document.getElementById("text-gen6").style.display="block";
+  document.getElementById("text-gen6").innerHTML='<div class="text-gen6-status"></div>'+"Unusually high traffic from your country" ;
+        document.getElementById("text-gen-loading").innerHTML="Checking Verification...";
+      }else if(linestep==15){
+  document.getElementById("text-gen4").style.display="block";
+        document.getElementById("text-gen-loading").innerHTML="Reading config...";
+      }else if(linestep==16){
+                    document.getElementById("text-gen5").style.display="block";
+        document.getElementById("text-gen-loading").innerHTML="User not verified.";
+      }else if(linestep==17){
+document.getElementById("loading-box").style.display="none";
+document.getElementById("bntverify").style.display="block";
+      }
+      linestep++;
+    }
+  }
+
+
+}
+
+
+
+//Recent activity
+var valactivity= setInterval(RecentActivity, 100);
+var prostep=0;
+var prostepDelay=0;
+function RecentActivity(){
+  if (prostep==0){
+    var genrobux = [card1, card2, card3,card4];
+    var robux=genrobux[Math.floor(Math.random() * 4)];
+    document.getElementById("genrobux").innerHTML=' '+robux;
+
+    var gennamelist = ["o251###", "siea110###", "isexx###","Gambit###",
+    "Outrageous###",
+    "Homely###",
+    "Plain###",
+    "Brash###",
+    "Annoyed###",
+    "Demonic###",
+    "Abnormal###",
+    "Optimally###",
+    "Inimical###",
+    "Feared###",
+    "Multiply###",
+    "Psychedelic###",
+    "Militaristic###",
+    "Ball ###",
+    "Legends###",
+    "Brute###",
+    "Bloss###",
+    "Tango###",
+    "Optimal###",
+    "Inimical###",
+    "Fear###",
+    "LeftDivide###",
+    "Psychedelic###",
+    "Militaristic### ",
+    "Keen###",
+    "Fuzzy###",
+    "Gangsters###",
+    "Mortified###",
+    "Lyrica###l",
+    "Outrageous###",
+    "Homely###",
+    "Plain###",
+    "Brash###",
+    "Nutty###",
+    "Complex###",
+    "Faulty###",
+    "Fanatical###",
+    "Odd###",
+    "Organic###",
+    "Quarrelsome###",
+    "Admirals###",
+    "Perpetrator###",
+    "Fighting###",
+    "Keen###",
+    "HolyJESUS###",
+    "Psychedelic###",
+    "Dark###",
+    "XxGoldenWarior###"];
+    var name=gennamelist[Math.floor(Math.random() * 52)];
+    document.getElementById("genname").innerHTML=name;
+  }
+  prostepDelay++;
+  if (prostep>=50 & prostepDelay>=100){
+prostep++;
+}else if(prostep<51) {
+    prostep++;
+  }
+
+
+  document.getElementById("pro-step1").style.backgroundColor="#03fff8";
+document.getElementById("progress-bar").style.width=prostep +"%";
+if (prostep==50){
+  document.getElementById("gen-loading").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/160654779319118d636b2ea3b4779800f01d8c318a.png')";
+  document.getElementById("gen-loading").style.animation ="myloading";
+} else if(prostep>50){
+  document.getElementById("pro-step2").style.backgroundColor="#03fff8";
+  document.getElementById("progress-bar").style.width=prostep +"%";
+  if (prostep>99){
+    document.getElementById("pro-step3").style.backgroundColor="#03fff8";
+    document.getElementById("veri-loading").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/160654779319118d636b2ea3b4779800f01d8c318a.png')";
+    document.getElementById("veri-loading").style.animation ="myloading";
+
+  }
+}
+if (prostep>=100 & prostepDelay>=160){
+        document.getElementById("gen-loading").style.backgroundImage="url(https://d266key948fg17.cloudfront.net/uploads/16681375499ff73c43e7645db066d6d1ac71532ae9.png')";
+        document.getElementById("gen-loading").style.animation ="Aniloading 1s linear infinite";
+        document.getElementById("veri-loading").style.backgroundImage="url('https://d266key948fg17.cloudfront.net/uploads/16681375499ff73c43e7645db066d6d1ac71532ae9.png')";
+        document.getElementById("veri-loading").style.animation ="Aniloading 1s linear infinite";
+
+      prostep=0;
+      prostepDelay=0;
+
+}
+}
+//chatroom
+
+
+var valactivity= setInterval(RecentActivity1, 6500);
+
+
+
+function RecentActivity1(){
+  var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes();
+
+  var gennamelist = ["fio251", "kaka110", "isexx","Gambit",
+  "Outrageous Creator",
+  "Homely Introvert",
+  "Plain Privacy",
+  "Brash Thug",
+  "Annoyed",
+  "Demonic AI",
+  "Abnormal Vigor",
+  "Optimally Ace",
+  "Inimical Thug",
+  "Feared Butcher",
+  "Multiply Divide",
+  "Psychedelic Servicemen",
+  "Militaristic Machine",
+  "Ball Blaster",
+  "Legends Reload",
+  "Brute Fact",
+  "Bloss flop",
+  "Tango Boss",
+  "Optimal Aces",
+  "Inimical Thugs",
+  "Fear Butchers",
+  "Left Divide",
+  "Psychedelic",
+  "Militaristic ",
+  "Keen Team Six",
+  "Fuzzy Pack",
+  "Gangsters",
+  "Mortified",
+  "Lyrical",
+  "Outrageous",
+  "Homely",
+  "Plain Privilege",
+  "Brash Thugs",
+  "Nutty Domination",
+  "Complex Slayers",
+  "Faulty Devils",
+  "Fanatical Tyranny",
+  "Odd Hooligans",
+  "Organic Punks",
+  "Quarrelsome",
+  "Admirals",
+  "Perpetrator",
+  "Fighting",
+  "Keen Team Six",
+  "HolyJESUS",
+  "Lone_Ranger",
+  "Dark Warrior",
+  "XxGoldenWarior"];
+  var name=gennamelist[Math.floor(Math.random() * 52)];
+
+  var genmessagelist = [
+"anyone reddit here?",
+"NICE here I come",
+"what can I buy with this I am new to this",
+"dont regret being here",
+"i tested on all servers and so for it works on all of them",
+"pretty sure this is saving me a lot of money",
+"just wow",
+"NICE here I come",
+"i wasted so much money on this - good this is free here",
+"i thought my friend wanted to fool me with this website link. but you can rly get it free here if you dont mess up with the survey part",
+"hey i am a newbie in game what can i do with this",
+"you think this will be patched any time soon",
+"Is this ban secure?",
+"thank you for giving me ALL THIS",
+"best free website cus it finally works",
+"who is up for mystery gifting?",
+"where i put in my code?",
+"I had a bit trouble with some survy thing but no problem if you just choose an easy",
+"had to reload page before it worked",
+"great generator good i found this",
+"my boyfriend will freak out ",
+"Why this is so easy lol?",
+"trololo adding so fast to my account",
+"noobs pls if you dont know how to do it dont spam here okay",
+"any idea which skin i should get",
+"dont regret being here",
+"guys i would share some codes but chat blocked it",
+"i think everyone get points here",
+"I got two for my girlfriend making her happy and i dont pay for them lol",
+"anyone playing now?",
+"I have seen this generator on hotshot stream i think",
+"i havent seen this before but im impressed with the result!",
+"I had a bit trouble with some survy thing but no problem if you just choose an easy",
+"Cool =)",
+"yo guys dont spam okay?",
+"Real",
+"EUW and NA worked fine",
+"why would someone just go here to hate and spam pff",
+"what was the latest update",
+"surveys dont appaer every time but i think its there to have enough money for the website to buy all codes",
+"a friend told me about this",
+"you can NOT lose any the codes DO exist!",
+"I got two for my girlfriend making her happy and i dont pay for them lol",
+"i am fine with having free how about you",
+"noobs pls if you dont know how to do it dont spam here okay",
+"What you think about all this",
+"is this twitch chat?",
+"i play on EU",
+"I got two for my girlfriend making her happy and i dont pay for them lol",
+"I love this",
+"yeah free is cool",
+"I want to play on korean servers would be cool",
+"i rly dont know which to do with this",
+"any bro needs codes? I have some",
+"are you not bored at all? dont spam",
+"What does it do?",
+"Does it work in North Americaa?",
+"where i put in my code?",
+"EUW and NA worked fine",
+"i am looking for a team pls add",
+"Exactly why this is so good",
+"i havent seen this before but im impressed with the result!",
+"i dont rly like new map",
+"Ok so I am back and what I can say is that my acc is filled up! I can not do a screenshot cus the chat would block any links meh but rly go try it its worth it",
+"When do I get my code?",
+"thanks to whoever pmed me his code it worked",
+"this website is used a lot sometimes you have to wait a bit",
+"Thanks man I appreciate this.",
+"Likely, but I think one day this will not work anymore",
+"hey i am a newbie in game what can i do with this",
+"soo ecxitedd",
+"ten minutes ago i had 0, now i have tons",
+"i have tried too many surveys in my life finally i got lucky here",
+"any idea if this still works tomorrow",
+"When do I get my code?",
+"Does it work in North Americaa?",
+"How long do you have to wait?",
+"hey i am a newbie in game what can i do with this",
+"i am fine with having free how about you",
+"fucking is real",
+"nice page for free points",
+"saw on stream yo",
+"Real",
+"i add more every day and i only use this website here so i can only recommend this stuff",
+"this makes my game more enjoyable i hope",
+"saw on stream yo",
+"this still works at the moment",
+"what?",
+"okay",
+"had to reload page before it worked",
+"i would do screenshot but maybe you report me then",
+"my friends on facebook spam this like every day they are rly happy about it",
+"just dodged queue for this",
+"now the secret is solved why some people have overload of it",
+"Thanks man I appreciate this.",
+"incredible",
+"wow really many people online here",
+"derp",
+"you guys watch nightblue?",
+"PM me a code pls",
+"raise your points",
+"wow 10 minutes ago this was empty now all people here wtf",
+"fucking helll! all free!.",
+"Likely, but I think one day this will not work anymore",
+"Ok so I am back and what I can say is that my acc is filled up! I can not do a screenshot cus the chat would block any links meh but rly go try it its worth it",
+"nice page for free points",
+"hi again im here for more codes",
+"you guys watch nightblue?",
+"Does it work in North Americaa?",
+"yayy",
+"i am fine with having free how about you",
+"check my profile i am rich",
+"noobs pls if you dont know how to do it dont spam here okay",
+"so happy i found this",
+"okay",
+"Does it work in North Americaa?",
+"is this twitch chat?",
+"what?",
+"Why this is so easy lol?",
+"i was stuck in survey had to do again but it worked then",
+"i think everyone get points here",
+"I got two for my girlfriend making her happy and i dont pay for them lol",
+"did you try 7482291023 yet? I used on NA but maybe other servers can use it too",
+"yes i got it too",
+"i wish i found this earlier",
+"Does it work in North Americaa?",
+"any bro needs codes? I have some",
+"thank you for giving me ALL THIS",
+"i cant buy it but now i can get it anyway",
+"pretty sure this is saving me a lot of money",
+"saw this on forums pretty impressive",
+"gayyyy",
+"thank you all for helping me out bros",
+"most i got in one day was 25k",
+"this is the best giveaway because we all have more than a chance",
+"i can imagine some people get rly mad for having lost so much money on this and didnt know this page here",
+"i rly dont know which to do with this",
+"i checked some of the people accounts here they are actually real humans maybe not all though",
+"yo guys dont spam okay?",
+"nice page for free points",
+"I can imagine this must be annoying for some players",
+"actually i had no problem with any survey ever, just try?",
+"i feel like i have as much as the progamers now without buying any!",
+"Real",
+"great generator good i found this",
+"i see no limits on how much you can get thats so epic",
+"i think some offers easier in countries like USA",
+"great generator good i found this",
+"trololo adding so fast to my account",
+"How long do you have to wait?",
+"i love it so much",
+"Exactly what I think",
+"this website is used a lot sometimes you have to wait a bit",
+"Ok so I am back and what I can say is that my acc is filled up! I can not do a screenshot cus the chat would block any links meh but rly go try it its worth it",
+"wow i waited ages to get a server transfer now with this service here it shouldnt be a problem anymore",
+"my boyfriend will freak out ",
+"i can imagine some people get rly mad for having lost so much money on this and didnt know this page here",
+"I unlocked this on EU servers.",
+"nice",
+"Ok so I am back and what I can say is that my acc is filled up! I can not do a screenshot cus the chat would block any links meh but rly go try it its worth it",
+"you think this will be patched any time soon",
+"You should give it a try",
+"Shut up man I love this website",
+"How much codes you unlocked so far?",
+"my friends on facebook spam this like every day they are rly happy about it",
+"nice page for free points",
+"What does it do?",
+"wow really many people online here"
+
+
+];
+  var message=genmessagelist[Math.floor(Math.random() * 52)];
+document.getElementById("chatroom-message").innerHTML=document.getElementById("chatroom-message").innerHTML + "<br>"+'<span class="chatroom-time">['+time+'] </span> <span class="chatroom-name">'+name+'</span>: <span class="chatroom-message">'+message+'</span>';
+var objDiv = document.getElementById("chartroom-body");
+objDiv.scrollTop = objDiv.scrollHeight;
+}
+
+//END
+
+</script>
+<script>
+    if(typeof window.ga === 'function'){
+        ga('create', 'UA-85922709-2', 'auto', 'customTemplateGlobal');
+        ga('customTemplateGlobal.set', 'dimension1', typeof window.CPBContentLocker === 'function' ? 0 : 1);
+        ga('customTemplateGlobal.send', 'pageView');
+    }
+
+
+</script>
+</body>
+</html>
