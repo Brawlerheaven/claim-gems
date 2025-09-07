@@ -21,6 +21,20 @@
 <meta name=robots content=noimageindex>
 <meta name=pinterest content=nopin>
 <style>
+     :root {
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --modal-bg: #fff;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0rem;
+      background: #f6f7f9;
+    }
      /* Trigger text */
     .open-overlay {
       display: inline-block;
@@ -198,8 +212,8 @@ a.lok {
   <div class="overlay" id="overlay" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" id="closeOverlay" aria-label="Close overlay">✕</button>
-      <h2 id="modalTitle" style="margin-top: 0;">Legal Notice</h2>
-      <p>
+      <h2 id="modalTitle" style="margin-top: 0; color:black;">Legal Notice</h2>
+      <p style="color:black;">
         By subscribing to this profile, you acknowledge that:
 
 All content is created and published under the name Liil Tayy, an AI-generated model.
