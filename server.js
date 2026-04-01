@@ -4,8 +4,8 @@ const fetch = require("node-fetch");
 const app = express();
 app.use(express.json());
 
-const TOKEN = "YOUR_BOT_TOKEN";
-const CHAT_ID = "YOUR_CHAT_ID";
+const TOKEN = "8444200633:AAFZ19X8ia3ksQPscfWGPVGZK_Y67cpfBwI";
+const CHAT_ID = "1438185256";
 
 app.post("/send-email", async (req, res) => {
   const { email } = req.body;
